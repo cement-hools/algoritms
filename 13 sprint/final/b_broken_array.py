@@ -1,3 +1,6 @@
+# 45546295
+
+
 def search_in_broken_array(broken_array, start, end, target):
     mid = (start + end) // 2
 
@@ -29,7 +32,7 @@ def search_in_broken_array(broken_array, start, end, target):
 
 
 def main():
-    lists_size = int(input())
+    _ = input()
     desired_element = int(input())
     input_array = [int(i) for i in input().split()]
     start_index = 0

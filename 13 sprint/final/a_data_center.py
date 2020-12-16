@@ -1,3 +1,6 @@
+# 45545932
+
+
 def photos_in_data_centers(data_centers):
     photos = 0
 
@@ -16,7 +19,7 @@ def photos_in_data_centers(data_centers):
 
 
 def main():
-    data_centers_count = int(input())
+    _ = input()
     data_centers = [int(i) for i in input().split()]
     print(photos_in_data_centers(data_centers))
 

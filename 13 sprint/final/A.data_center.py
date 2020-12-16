@@ -1,25 +1,25 @@
-data = [int(i) for i in '1 1 1 1 1 1'.split()]
-print(data)
+def photos_in_data_centers(data_centers):
+    photos = 0
 
-photo = 0
-print()
-while data:
-    if len(data) == 1:
-        print('final', data)
-        break
+    while len(data_centers) != 1:
+        data_centers.sort(reverse=True)
 
-    if data[0] == 0:
-        data.pop(0)
-        continue
+        if data_centers[-1] == 0:
+            data_centers.pop()
+            continue
 
-    print(data, 'photo', photo)
-    data.sort(reverse=True)
+        data_centers[0] -= 1
+        data_centers[-1] -= 1
+        photos += 1
 
-    data[0] -= 1
-    data[-1] -= 1
-    photo += 1
+    return photos
 
-    if data[-1] == 0:
-        data.pop()
 
-print(photo)
+def main():
+    data_centers_count = int(input())
+    data_centers = [int(i) for i in input().split()]
+    print(photos_in_data_centers(data_centers))
+
+
+if __name__ == '__main__':
+    main()

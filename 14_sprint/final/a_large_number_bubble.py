@@ -1,22 +1,23 @@
-n = 1
-if n:
-
-    input_str = '15 56 2 0 3 578 569 8 0 0 0 399 74 58 397 379 99 990'
-
-    x = [int(i) for i in input_str.split()]
-
-    print(x)
+# 45812420
 
 
-    def large_number(input_nums):
-        if not input_nums:
-            return "0"
-        nums = list(map(str, input_nums))
-        for i in range(len(nums)):
-            for j in range(len(nums) - i - 1):
-                if nums[j] + nums[j + 1] < nums[j + 1] + nums[j]:
-                    nums[j], nums[j + 1] = nums[j + 1], nums[j]
-        return "".join(nums)
+def large_number(numbers_arr):
+    if not numbers_arr:
+        return '0'
+    numbers = list(map(str, numbers_arr))
+    for i in range(len(numbers)):
+        for j in range(len(numbers) - i - 1):
+            if numbers[j] + numbers[j + 1] < numbers[j + 1] + numbers[j]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+    return "".join(numbers)
 
 
-    print(large_number(x))
+def main():
+    numbers = int(input())
+    if numbers:
+        input_numbers = [i for i in input().split()]
+        print(large_number(input_numbers))
+
+
+if __name__ == '__main__':
+    main()

@@ -8,8 +8,6 @@ n = 1
 if n:
 
     x = [int(i) for i in '4 2 5 7'.split()]  # res 4 5 2 7
-    x = '4 2 5 7'.split()
-    x = list(map(int, x))
 
     res = []
     print(x)

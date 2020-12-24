@@ -1,4 +1,4 @@
-# 45812420
+# id 45812420
 
 
 def large_number(numbers_arr):
@@ -13,8 +13,8 @@ def large_number(numbers_arr):
 
 
 def main():
-    numbers = int(input())
-    if numbers:
+    count_of_numbers = int(input())
+    if count_of_numbers:
         input_numbers = [i for i in input().split()]
         print(large_number(input_numbers))
 

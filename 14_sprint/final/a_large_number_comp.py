@@ -1,14 +1,19 @@
-# id 45812420
+# 45872239
+
+
+from functools import cmp_to_key
 
 
 def large_number(numbers_arr):
+    def compare(x, y):
+        if x + y >= y + x:
+            return 1
+        return -1
+
     if not numbers_arr:
         return '0'
     numbers = list(map(str, numbers_arr))
-    for i in range(len(numbers)):
-        for j in range(len(numbers) - i - 1):
-            if numbers[j] + numbers[j + 1] < numbers[j + 1] + numbers[j]:
-                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+    numbers.sort(key=cmp_to_key(compare), reverse=True)
     return ''.join(numbers)
 
 
